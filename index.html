@@ -111,21 +111,33 @@ h2{font-family:'Unbounded',sans-serif;font-weight:700;font-size:clamp(32px,5.4vw
 .pill{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--card-edge);border-radius:999px;padding:3px 9px;margin-left:8px;color:var(--paper-dim);vertical-align:middle}
 .pill.conf{border-color:rgba(112,204,164,.5);color:#7fd4ab}
 
-/* ---------- open-time idea grid ---------- */
-.ideas-h{display:flex;align-items:baseline;gap:14px;margin:48px 0 20px}
-.ideas-h h3{font-family:'Unbounded',sans-serif;font-size:clamp(16px,2vw,21px);font-weight:700;text-transform:uppercase;letter-spacing:.02em}
-.ideas-h .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);transition:color .8s ease}
-.ideas{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:16px;margin-bottom:20px}
-.idea{border:1px solid var(--card-edge);background:var(--card);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .35s ease,border-color .35s ease}
-.idea:hover{transform:translateY(-5px);border-color:var(--accent)}
-.idea .ph{aspect-ratio:16/10;overflow:hidden;position:relative;background:linear-gradient(135deg,rgba(127,184,220,.18),rgba(46,163,143,.14))}
-.idea .ph img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s ease,transform .8s ease}
-.idea .ph img.loaded{opacity:1}
-.idea:hover .ph img{transform:scale(1.05)}
-.idea .bd{padding:16px 16px 18px;display:flex;flex-direction:column;gap:7px;flex:1}
-.idea .who{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);transition:color .8s ease}
-.idea h4{font-weight:700;font-size:15.5px;line-height:1.25}
-.idea p{font-size:13px;color:var(--paper-dim)}
+/* ---------- field guide: horizontal shelves ---------- */
+.guide{margin:52px 0 8px}
+.guide-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px 18px;margin-bottom:2px}
+.guide-head h3{font-family:'Unbounded',sans-serif;font-size:clamp(16px,2vw,21px);font-weight:700;text-transform:uppercase;letter-spacing:.02em}
+.axis{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);display:flex;align-items:center;gap:8px}
+.axis::before{content:"";width:46px;height:1px;background:linear-gradient(90deg,var(--accent),transparent)}
+.shelf{margin-top:26px}
+.shelf-tag{display:flex;align-items:center;gap:12px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;transition:color .8s ease}
+.shelf-tag::after{content:"";flex:1;height:1px;background:var(--hairline)}
+.shelf-tag .swipe{color:var(--paper-dim);letter-spacing:.08em;font-size:9px}
+.row{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x proximity;padding:4px 2px 14px;scrollbar-width:thin;scrollbar-color:var(--card-edge) transparent}
+.row::-webkit-scrollbar{height:5px}
+.row::-webkit-scrollbar-track{background:transparent}
+.row::-webkit-scrollbar-thumb{background:var(--card-edge);border-radius:99px}
+.gc{min-width:248px;max-width:248px;scroll-snap-align:start;border:1px solid var(--card-edge);background:var(--card);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s ease,border-color .3s ease}
+.gc:hover{transform:translateY(-4px);border-color:var(--accent)}
+.gc .ph{aspect-ratio:16/9;overflow:hidden;position:relative;background:linear-gradient(135deg,rgba(127,184,220,.16),rgba(46,163,143,.12))}
+.gc .ph img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s ease}
+.gc .ph img.loaded{opacity:1}
+.gc .bd{padding:13px 15px 15px;display:flex;flex-direction:column;gap:7px;flex:1}
+.fame{display:flex;align-items:center;gap:4px}
+.fame i{width:6px;height:6px;border-radius:50%;background:var(--card-edge)}
+.fame i.on{background:var(--accent);transition:background .8s ease}
+.fame span{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--paper-dim);margin-left:6px}
+.gc h4{font-weight:700;font-size:15px;line-height:1.25}
+.gc p{font-size:12.5px;color:var(--paper-dim);flex:1;line-height:1.5}
+.gc .mt{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--accent);letter-spacing:.06em;opacity:.9;transition:color .8s ease}
 
 /* ---------- boat day feature ---------- */
 .feature{margin:52px 0 8px;border-radius:26px;overflow:hidden;position:relative;border:1px solid rgba(60,190,200,.28);
@@ -255,12 +267,43 @@ footer .sig{margin-top:44px;font-family:'JetBrains Mono',monospace;font-size:10p
       </div>
     </div>
 
-    <div class="ideas-h rv"><h3>Open-time ideas</h3><span class="tag">no bookings yet</span></div>
-    <div class="ideas">
-      <div class="idea rv"><div class="bd"><div class="who">Zoey + Ethan unanimous</div><h4>Lindt Home of Chocolate</h4><p>The world's largest chocolate museum, crowned by a 30-foot free-standing chocolate fountain. Tasting stations included. Ten minutes by train along the lake.</p></div></div>
-      <div class="idea rv"><div class="bd"><div class="who">The classic move</div><h4>Climb the Grossmünster tower</h4><p>187 steps up Karlsturm for the postcard view of the spires, the Limmat, and the lake with the Alps behind. Legend says Charlemagne founded the church.</p></div></div>
-      <div class="idea rv"><div class="bd"><div class="who">Hot afternoon fix</div><h4>Swim the lake like a local</h4><p>Zürich's summer culture is its open-air <em>badis</em> — lakeside baths where the whole city swims after work. Water is alpine-fed and glass-clear.</p></div></div>
-      <div class="idea rv"><div class="bd"><div class="who">Barbara's Europe debut</div><h4>Uetliberg, the house mountain</h4><p>A 20-minute train from the main station to Zürich's own summit — full panorama of the city, lake, and snowcaps. Easiest “we're really in Switzerland” photo of the trip.</p></div></div>
+    <div class="guide rv">
+      <div class="guide-head"><h3>Field Guide · Zürich</h3><div class="axis">famous ⟶ off the path</div></div>
+
+      <div class="shelf">
+        <div class="shelf-tag">☀ Daylight <span class="swipe">swipe →</span></div>
+        <div class="row">
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i class="on"></i><span>The classic</span></div><h4>Lindt Home of Chocolate</h4><p>The world's biggest chocolate museum, crowned by a 30-foot free-standing chocolate fountain. Tasting stations throughout.</p><div class="mt">10 min by train · book a slot</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i class="on"></i><span>The classic</span></div><h4>Climb the Grossmünster</h4><p>187 steps up Karlsturm for the definitive view: spires, the Limmat, the lake, Alps behind. Legend credits Charlemagne with founding the church.</p><div class="mt">Old town · 5 min walk</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Crowd fave</span></div><h4>Swim the lake like a local</h4><p>Zürich summer = the <em>badis</em>, open-air lake and river baths where the whole city swims. Alpine-fed, glass-clear, lifeguarded.</p><div class="mt">Seebad Enge · lakefront</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Crowd fave</span></div><h4>Uetliberg summit</h4><p>The city's house mountain — 20 minutes by train from the main station to a full panorama of city, lake, and snowcaps. Barbara's first Alps photo.</p><div class="mt">S10 train · stroller-OK</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Zoey pick</span></div><h4>Masoala Rainforest, Zürich Zoo</h4><p>A living Madagascar rainforest under one vast roof — lemurs, chameleons, free-flying birds. Rainy-day insurance that's great anyway.</p><div class="mt">Tram 6 · half day</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i></i><i></i><span>Ethan pick</span></div><h4>Freitag Tower + Frau Gerolds</h4><p>West Zürich's industrial quarter: a tower of stacked shipping containers selling truck-tarp bags, street food gardens, murals. Zürich's cool side.</p><div class="mt">Hardbrücke · gritty-chic</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i></i><i></i><span>Deep cut</span></div><h4>Lindenhof hill</h4><p>A quiet plane-tree square on the site of the Roman fort — giant chess boards, old men playing boules, the best free view in the old town.</p><div class="mt">2 min from the Airbnb</div></div></article>
+        </div>
+      </div>
+
+      <div class="shelf">
+        <div class="shelf-tag">☾ After dark <span class="swipe">swipe →</span></div>
+        <div class="row">
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i class="on"></i><span>The classic</span></div><h4>Lakefront at golden hour</h4><p>Gelato on Sechseläutenplatz, swans on black water, Alps going pink. The whole city promenades here on July evenings.</p><div class="mt">Bellevue · free</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Crowd fave</span></div><h4>Jules Verne Panorama Bar</h4><p>Cocktails in the cupola of a 1907 observatory building above the old town rooftops. Sunset seats go fast.</p><div class="mt">Uraniastrasse · views</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Local move</span></div><h4>Rimini Bar</h4><p>By day it's a river bath; at night the wooden decks become a lantern-lit garden bar hidden behind a fence in the middle of the city.</p><div class="mt">Schanzengraben canal</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i></i><i></i><span>Deep cut</span></div><h4>Old Crow</h4><p>A tiny wood-paneled room with one of Europe's great back bars — a thousand-plus bottles, bartenders who treat it like a library.</p><div class="mt">Schwanengasse · adults' hour</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i></i><i></i><span>Deep cut</span></div><h4>Barfussbar</h4><p>“Barefoot bar” on the 1888 women's bathhouse deck — shoes off at the door, drinks over the Limmat, occasional live music. Summer only.</p><div class="mt">Stadthausquai · evenings</div></div></article>
+        </div>
+      </div>
+
+      <div class="shelf">
+        <div class="shelf-tag">✕ The table <span class="swipe">swipe →</span></div>
+        <div class="row">
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i class="on"></i><span>The classic</span></div><h4>Zeughauskeller</h4><p>Beer hall in a 1487 armory — halberds on the walls, rösti, meter-long sausages. Loud, fast, totally toddler-proof.</p><div class="mt">Paradeplatz · no-stress</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i class="on"></i><span>The classic</span></div><h4>Swiss Chuchi</h4><p>The fondue everyone photographs, in a chalet room in Niederdorf. Order one pot for the table and a plate of air-dried beef.</p><div class="mt">Old town · book ahead</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Crowd fave</span></div><h4>Sternen Grill</h4><p>Zürich's most famous sausage counter: a St. Galler bratwurst, hard roll, ferociously hot mustard. Eat standing on the square like everyone else.</p><div class="mt">Bellevue · ~10 francs</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Local move</span></div><h4>Hiltl</h4><p>The oldest vegetarian restaurant on Earth — serving since 1898. Pay-by-weight buffet means Zoey builds her own plate and nobody negotiates.</p><div class="mt">Sihlstrasse · easy lunch</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i></i><i></i><span>The splurge</span></div><h4>Kronenhalle</h4><p>Zürich's grand institution: real Chagalls and Picassos on the dining-room walls, sliced veal in cream, career waiters. One big-night option.</p><div class="mt">Rämistrasse · jackets-ish</div></div></article>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -300,22 +343,43 @@ footer .sig{margin-top:44px;font-family:'JetBrains Mono',monospace;font-size:10p
       </div>
     </div>
 
-    <div class="ideas-h rv"><h3>Open-time ideas</h3><span class="tag">no bookings yet</span></div>
-    <div class="ideas">
-      <div class="idea rv">
-        <div class="ph"><img data-img="Hiking Switzerland Caumasee with Crap Sogn Gion and Vorab.jpg" alt="Caumasee"></div>
-        <div class="bd"><div class="who">Everyone · Zoey-perfect</div><h4>Caumasee — the turquoise lake</h4><p>Spring-fed, unreal color, and one of the warmest mountain lakes in Switzerland (~75°F in July). Ride the 1939 funicular down, rent a rowboat out to the tiny island, lunch at the lido.</p></div>
+    <div class="guide rv">
+      <div class="guide-head"><h3>Field Guide · Laax / Flims</h3><div class="axis">famous ⟶ off the path</div></div>
+
+      <div class="shelf">
+        <div class="shelf-tag">☀ Daylight <span class="swipe">swipe →</span></div>
+        <div class="row">
+          <article class="gc"><div class="ph"><img data-img="Hiking Switzerland Caumasee with Crap Sogn Gion and Vorab.jpg" alt="Caumasee"></div><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i class="on"></i><span>The classic</span></div><h4>Caumasee</h4><p>The turquoise lake: 1939 funicular down, rowboat to the tiny island, lido lunch. One of the warmest mountain lakes in Switzerland (~75°F).</p><div class="mt">Flims · Zoey heaven</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i class="on"></i><span>The classic</span></div><h4>Senda dil Dragun</h4><p>The world's longest treetop walkway — about a mile gliding through the canopy between Laax and Murschetg, with a spiral slide down the end tower.</p><div class="mt">Starts in the village · all ages</div></div></article>
+          <article class="gc"><div class="ph"><img data-img="Ruinaulta from Zault Observation Deck.jpg" alt="Rhine Gorge"></div><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i class="on"></i><span>The classic</span></div><h4>Il Spir over the Rhine Gorge</h4><p>Easy forest walk to a platform shaped like a swift's wing, hanging over the “Swiss Grand Canyon” — 1,300-ft white cliffs. UNESCO ground.</p><div class="mt">From Conn · stroller-OK path</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Ethan + Lucas</span></div><h4>Raft the young Rhine</h4><p>Guided rafts run the gorge floor from Ilanz — white cliffs overhead, splash sections, swim stops. Family floats and wilder lines both exist.</p><div class="mt">Half day · book in Ilanz/Flims</div></div></article>
+          <article class="gc"><div class="ph"><img data-img="Glacier-Express in der Rheinschlucht (2012).jpg" alt="Red train in the Rhine Gorge"></div><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Crowd fave</span></div><h4>Rhaetian Railway through the gorge</h4><p>The little red train threads the canyon floor — the Zoey-and-Barbara version of the rafting trip. Hop off at Versam and wave at the rafts.</p><div class="mt">From Reichenau · cheap thrill</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Ethan pick</span></div><h4>Galaaxy — Crap Sogn Gion</h4><p>Cable car to 7,400 ft, where the summit station is styled like a crash-landed space station. Views to the Vorab glacier, downhill trails, big lunch terrace.</p><div class="mt">Lift from Laax Murschetg</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Rainy-day ace</span></div><h4>Freestyle Academy</h4><p>The world's first indoor freestyle hall — pro trampolines, foam pits, skate bowl, airbag jumps. Where Laax's snowboarders train all summer.</p><div class="mt">Murschetg · Ethan sends it</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i></i><i></i><span>Deep cut</span></div><h4>Trutg dil Flem</h4><p>A waterfall trail crossing the Flem stream on seven sculptural stone-and-steel bridges — pools, cascades, picnic ledges. Quietly spectacular.</p><div class="mt">Above Flims · 2–3 hrs</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i></i><i></i><span>Deep cut</span></div><h4>Crestasee</h4><p>Caumasee's shy emerald twin — smaller, quieter, forest-ringed, with a little bathhouse café. Where locals go when the famous lake fills up.</p><div class="mt">Trin side · 20 min walk in</div></div></article>
+        </div>
       </div>
-      <div class="idea rv">
-        <div class="ph"><img data-img="Ruinaulta from Zault Observation Deck.jpg" alt="Rhine Gorge / Ruinaulta"></div>
-        <div class="bd"><div class="who">The view</div><h4>Il Spir over the Rhine Gorge</h4><p>An easy forest walk to a platform shaped like a swift's wing, hanging over the “Swiss Grand Canyon” — 1,300-foot white cliffs carved by the young Rhine. UNESCO tectonic site.</p></div>
+
+      <div class="shelf">
+        <div class="shelf-tag">☾ After dark <span class="swipe">swipe →</span></div>
+        <div class="row">
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i class="on"></i><span>The classic</span></div><h4>Alpenglow hour</h4><p>Mountain villages do sunset better than nightlife: terrace seats facing west around 9 PM as the peaks go rose-gold, then violet.</p><div class="mt">Startgels or the balcony</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Crowd fave</span></div><h4>Rocksresort square</h4><p>Laax's social hub at the lift base — bar terraces, music some nights, kids running the plaza while adults finish the wine.</p><div class="mt">Laax Murschetg · easy</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>In-house</span></div><h4>Peaks Place spa night</h4><p>You live above a wellness floor: pool, saunas, quiet room. The correct answer after paragliding day.</p><div class="mt">Downstairs · robes on</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i></i><i></i><span>Deep cut</span></div><h4>Stargazing above the village</h4><p>Graubünden has some of Switzerland's darkest skies. Ten minutes uphill from the lights and the Milky Way just shows up. Bring the blanket.</p><div class="mt">Clear nights · free</div></div></article>
+        </div>
       </div>
-      <div class="idea rv">
-        <div class="ph"><img data-img="Glacier-Express in der Rheinschlucht (2012).jpg" alt="Red train through the Rhine Gorge"></div>
-        <div class="bd"><div class="who">Ethan · or river raft it</div><h4>Through the gorge — by rail or raft</h4><p>The Rhaetian Railway threads the canyon floor (Zoey + Barbara friendly). Or split the crew: Lucas + Ethan whitewater-raft the same stretch while the others take the train and wave.</p></div>
-      </div>
-      <div class="idea rv">
-        <div class="bd"><div class="who">Ethan · rainy-day ace</div><h4>Freestyle Academy Laax</h4><p>The world's first indoor freestyle hall — pro trampolines, foam pits, skate bowl, airbag jumps. Laax is Europe's snowboard capital and this is where its riders train all summer.</p></div>
+
+      <div class="shelf">
+        <div class="shelf-tag">✕ The table <span class="swipe">swipe →</span></div>
+        <div class="row">
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i class="on"></i><span>The classic</span></div><h4>Tegia Larnags</h4><p>Rustic hut on the hillside above Laax — capuns, barley soup, valley views from the terrace. Walk up for the appetite, ride down happy.</p><div class="mt">Mid-mountain · book</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Crowd fave</span></div><h4>Camino, Rocksresort</h4><p>The easy family dinner on the square — pizza, pasta, Bündner plates, zero drama, five-minute walk home.</p><div class="mt">Lift base · casual</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Sunset seat</span></div><h4>Ustria Startgels</h4><p>Terrace perched above Flims with the long view down the valley — time dinner to the alpenglow and let the mountains do the show.</p><div class="mt">Above Flims · golden hour</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i></i><i></i><span>Ethan pick</span></div><h4>Riders Hotel</h4><p>Laax's cool kid: snowboard-culture hotel with a creative, veg-leaning kitchen and the best playlist in the valley.</p><div class="mt">Murschetg · book</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i></i><i></i><span>Order this</span></div><h4>Eat like a Bündner</h4><p>The canton's greatest hits: <b>capuns</b> (chard-wrapped dumplings), <b>maluns</b> (crispy potato crumbles), paper-thin <b>Bündnerfleisch</b>, and <b>nusstorte</b> for the road.</p><div class="mt">Any menu · say “allegra”</div></div></article>
+        </div>
       </div>
     </div>
   </div>
@@ -353,6 +417,41 @@ footer .sig{margin-top:44px;font-family:'JetBrains Mono',monospace;font-size:10p
         <div class="ev"><div class="t">6:00 PM</div><div><div class="title">Piazza del Duomo</div><div class="sub">The cathedral took ~600 years to finish and carries 3,400 statues</div></div></div>
         <div class="ev"><div class="t">6:30 PM</div><div><div class="title">Duomo rooftop walk <span class="pill conf">Booked</span></div><div class="sub">Walk <em>on top of</em> the cathedral, through a marble forest of spires</div><div class="fact">Golden hour up there. On clear evenings you can see the Alps we just left.</div></div></div>
         <div class="ev"><div class="t">8:00 PM</div><div><div class="title">The Doping Club — aperitivo hour</div><div class="sub">Piazza XXIV Maggio · Navigli canal district</div><div class="fact">The canals were engineered with help from <b>Leonardo da Vinci</b>, who lived here while painting The Last Supper. Now it's Milan's best evening scene.</div></div></div>
+      </div>
+    </div>
+
+    <div class="guide rv">
+      <div class="guide-head"><h3>Field Guide · Milan</h3><div class="axis">famous ⟶ off the path</div></div>
+
+      <div class="shelf">
+        <div class="shelf-tag">☀ Daylight <span class="swipe">swipe →</span></div>
+        <div class="row">
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i class="on"></i><span>The classic</span></div><h4>La Rinascente rooftop</h4><p>The department store's top-floor food hall puts you at eye level with the Duomo's spires — espresso with gargoyles. Perfect gap-filler before your 5 PM Galleria slot.</p><div class="mt">Piazza Duomo · no booking</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i class="on"></i><span>The classic</span></div><h4>Sforza Castle + Parco Sempione</h4><p>The Renaissance fortress where Leonardo worked, opening onto Milan's central park — fountains, lawns, and playgrounds for a Zoey energy-burn.</p><div class="mt">15 min walk from Brera</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>At your door</span></div><h4>Brera wander</h4><p>Your neighborhood is the artists' quarter — cobbled lanes, gallery windows, flower stalls. The morning-of-departure coffee walk writes itself.</p><div class="mt">Jul 16 AM · before the train</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Ethan pick</span></div><h4>Starbucks Reserve Roastery</h4><p>Yes, really: a cathedral of coffee in an 1899 post office palazzo — roasting drums, brass pipes, theater. One of the wildest retail spaces in Europe.</p><div class="mt">Piazza Cordusio · free show</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i></i><i></i><span>Deep cut</span></div><h4>Bar Luce, Fondazione Prada</h4><p>The café Wes Anderson designed — Formica pastels, vintage pinball, jukebox. A film set you can order a milkshake in.</p><div class="mt">South Milan · taxi hop</div></div></article>
+        </div>
+      </div>
+
+      <div class="shelf">
+        <div class="shelf-tag">☾ After dark <span class="swipe">swipe →</span></div>
+        <div class="row">
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i class="on"></i><span>Booked-ish</span></div><h4>Navigli aperitivo crawl</h4><p>You're at The Doping Club at 8 — get to the canals by 7 and drift: every bar puts out snacks with the drinks, and the water goes gold.</p><div class="mt">Naviglio Grande · your 8 PM</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Crowd fave</span></div><h4>Terrazza Aperol</h4><p>A spritz with the Duomo filling the entire window. Touristy, yes. Also the single most Milan photo that exists.</p><div class="mt">Piazza Duomo · sunset</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>The scene</span></div><h4>Ceresio 7</h4><p>Twin rooftop pools, fashion crowd, skyline views — Milan's glossiest sundowner if the adults get a night cap window.</p><div class="mt">Porta Nuova · dress up</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i></i><i></i><span>Deep cut</span></div><h4>Backdoor43</h4><p>Claims the title of world's smallest bar: four seats, reservation-only, masked bartender — or order a cocktail in a paper cup from the walk-up window and drink it canal-side.</p><div class="mt">Ripa di Porta Ticinese</div></div></article>
+        </div>
+      </div>
+
+      <div class="shelf">
+        <div class="shelf-tag">✕ The table <span class="swipe">swipe →</span></div>
+        <div class="row">
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i class="on"></i><span>The classic</span></div><h4>Luini</h4><p>The panzerotti institution beside the Duomo — pillowy fried pockets of tomato and mozzarella. The line is long and moves in minutes.</p><div class="mt">Via S. Radegonda · ~€3</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i class="on"></i><span>The classic</span></div><h4>Spontini</h4><p>Thick-cut Milanese pizza al trancio since 1953 — one slice is a meal, crisp-bottomed and molten. Fast, cheap, beloved.</p><div class="mt">Multiple spots · no fuss</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Crowd fave</span></div><h4>El Brellin</h4><p>Candlelit classic on the tiny washhouse alley in Navigli — risotto alla milanese, ossobuco, tables by the old canal. Steps from your 8 PM.</p><div class="mt">Vicolo dei Lavandai · book</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i></i><i></i><span>Deep cut</span></div><h4>Ratanà</h4><p>Modern Milanese in a restored rail-era villa — the saffron risotto people cross the city for. If one Milan meal gets booked properly, it's this.</p><div class="mt">Porta Nuova · reserve</div></div></article>
+        </div>
       </div>
     </div>
   </div>
@@ -428,22 +527,44 @@ footer .sig{margin-top:44px;font-family:'JetBrains Mono',monospace;font-size:10p
       </div>
     </div>
 
-    <div class="ideas-h rv"><h3>Open-time ideas</h3><span class="tag">between the bookings</span></div>
-    <div class="ideas">
-      <div class="idea rv">
-        <div class="ph"><img data-img="Portofino Hafen.JPG" alt="Portofino harbor"></div>
-        <div class="bd"><div class="who">Everyone · stroller-friendly</div><h4>The “walk of kisses” to Portofino</h4><p>La passeggiata dei baci — a paved seaside path from our beach straight into Portofino's harbor, ~25 minutes through pines above the water. The best free thing on the Riviera.</p></div>
+    <div class="guide rv">
+      <div class="guide-head"><h3>Field Guide · The Riviera</h3><div class="axis">famous ⟶ off the path</div></div>
+
+      <div class="shelf">
+        <div class="shelf-tag">☀ Daylight <span class="swipe">swipe →</span></div>
+        <div class="row">
+          <article class="gc"><div class="ph"><img data-img="Portofino Hafen.JPG" alt="Portofino harbor"></div><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i class="on"></i><span>The classic</span></div><h4>Walk of kisses → Portofino</h4><p>La passeggiata dei baci: a paved seaside path from your beach straight into Portofino's harbor, ~25 min through pines above the water.</p><div class="mt">From Paraggi · stroller-OK</div></div></article>
+          <article class="gc"><div class="ph"><img data-img="Portofino Panorama.jpg" alt="View over Portofino"></div><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i class="on"></i><span>The classic</span></div><h4>Castello Brown + the faro</h4><p>Climb past San Giorgio church to the 16th-century castle garden, then on to the lighthouse at land's end — coastline views to Tuscany.</p><div class="mt">Portofino · small entry fee</div></div></article>
+          <article class="gc"><div class="ph"><img data-img="San Fruttuoso-abbazia.JPG" alt="San Fruttuoso abbey"></div><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Crowd fave</span></div><h4>Return to San Fruttuoso</h4><p>Slow-day version of boat day: ferry to the abbey cove, swim, explore the 10th-century cloister, focaccia with feet in pebbles. No roads reach it.</p><div class="mt">Ferry from S. Margherita</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Crowd fave</span></div><h4>Kayak or SUP the reserve</h4><p>Guided paddles hug the cliffs of the marine park — sea caves, glass water, zero yacht wake if you go at 8 AM. Outdoor Portofino runs family trips.</p><div class="mt">From Niasca/Paraggi · AM</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Town day</span></div><h4>Santa Margherita + Villa Durazzo</h4><p>The real town next door: palm seafront, morning market, and a 17th-century villa garden with sea views. Gelato benches everywhere.</p><div class="mt">10 min by bus/taxi</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i></i><i></i><span>Deep cut</span></div><h4>Camogli by ferry</h4><p>A working fishing town of tall painted houses — focaccia on the seawall, nets on the beach. Next door: Recco, birthplace of molten cheese focaccia.</p><div class="mt">Ferry hop · half day</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i></i><i></i><span>Big swing</span></div><h4>Cinque Terre raid</h4><p>Direct train, about an hour, to Monterosso — then boats and rail hops between the five cliff villages. Long day; legendary payoff.</p><div class="mt">From S. Margherita station</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i></i><i></i><span>Ethan pick</span></div><h4>Try-dive with the locals</h4><p>Portofino's dive shops run beginner intro dives inside the marine reserve — Ethan could go from snorkeling the Cristo to actually kneeling at its base.</p><div class="mt">Book a day ahead</div></div></article>
+        </div>
       </div>
-      <div class="idea rv">
-        <div class="ph"><img data-img="Portofino Panorama.jpg" alt="View over Portofino from Castello Brown"></div>
-        <div class="bd"><div class="who">The photo</div><h4>Castello Brown + the lighthouse</h4><p>Climb from Portofino's piazza past the San Giorgio church to a 16th-century castle garden, then on to the faro at the tip of the headland — coastline views all the way to Tuscany.</p></div>
+
+      <div class="shelf">
+        <div class="shelf-tag">☾ After dark <span class="swipe">swipe →</span></div>
+        <div class="row">
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i class="on"></i><span>The classic</span></div><h4>The piazzetta after dark</h4><p>Portofino's little square is the Riviera's living room at night — gelato in hand, superyacht lights on black water, celebrity bingo.</p><div class="mt">Portofino · every evening</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Golden hour</span></div><h4>Sunset at the faro</h4><p>In summer a tiny bar operates at the lighthouse point — the last drink before open sea, with the sun dropping behind the peninsula.</p><div class="mt">20 min walk from piazzetta</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Crowd fave</span></div><h4>La Gritta</h4><p>The old American bar hanging over the harbor — negronis where the '50s film crowd drank theirs. Small, storied, perfect at 10 PM.</p><div class="mt">Portofino waterfront</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i></i><i></i><span>The splurge</span></div><h4>One drink at the Splendido</h4><p>Belmond's clifftop grande dame above the bay. You're not staying there; you can absolutely have one perfect cocktail on the terrace like you are.</p><div class="mt">Above Portofino · dress up</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i></i><i></i><span>Ethan pick</span></div><h4>Covo di Nord-Est</h4><p>The Riviera's legendary old nightclub on the rocks in Santa Margherita — a '60s jet-set landmark that still runs summer nights. He's 18; Italy says that's an adult.</p><div class="mt">S. Margherita · late</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i></i><i></i><span>Deep cut</span></div><h4>Night swim at Paraggi</h4><p>Your own cove after the beach clubs close: warm shallows, moonlight, the hills black around the emerald bay. The trip memory nobody plans.</p><div class="mt">Home beach · flashlights</div></div></article>
+        </div>
       </div>
-      <div class="idea rv">
-        <div class="ph"><img data-img="San Fruttuoso-abbazia.JPG" alt="San Fruttuoso abbey on its cove"></div>
-        <div class="bd"><div class="who">If the boat day hooks us</div><h4>Return to San Fruttuoso by ferry</h4><p>Slow day version: ferry from Santa Margherita to the abbey cove, swim, explore the cloister, lunch with feet in pebbles. No roads reach it — it's been boat-only for 1,000 years.</p></div>
-      </div>
-      <div class="idea rv">
-        <div class="bd"><div class="who">Ethan + Lucas dawn patrol</div><h4>Kayak the marine reserve</h4><p>Rent kayaks or paddleboards at Paraggi and hug the cliffs toward Portofino before the yacht traffic wakes up. Glass water, sea caves, zero crowds at 8 AM.</p></div>
+
+      <div class="shelf">
+        <div class="shelf-tag">✕ The table <span class="swipe">swipe →</span></div>
+        <div class="row">
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i class="on"></i><span>The classic</span></div><h4>Da Puny</h4><p>The piazzetta institution — Ligurian classics served by a front-row table to the harbor theater. Book well ahead; worth it once.</p><div class="mt">Portofino square · reserve</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Crowd fave</span></div><h4>Ö Magazin</h4><p>A former boat warehouse on Portofino's quay turned easy seafood kitchen — grilled catch, pesto pastas, feet-from-the-water tables.</p><div class="mt">Calata Marconi · lunch too</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Local move</span></div><h4>U Batti</h4><p>A tiny Santa Margherita den famous for essentially one dish: gamberoni — huge local prawns done simply and perfectly.</p><div class="mt">S. Margherita · small, book</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Marina table</span></div><h4>L'Altro Eden</h4><p>Seafood on the Santa Margherita marina — crudo, anchovies, the catch board. Where the town eats when it dresses up a little.</p><div class="mt">Via Calata al Porto</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i></i><i></i><span>Deep cut</span></div><h4>The focaccia run</h4><p>Ligurian breakfast: warm focaccia from a Camogli seafront bakery, eaten on the wall. Pilgrimage tier: Recco's focaccia col formaggio, molten cheese in tissue-thin dough.</p><div class="mt">Camogli/Recco · mornings</div></div></article>
+        </div>
       </div>
     </div>
   </div>
@@ -489,22 +610,44 @@ footer .sig{margin-top:44px;font-family:'JetBrains Mono',monospace;font-size:10p
       </div>
     </div>
 
-    <div class="ideas-h rv"><h3>Open-time ideas</h3><span class="tag">for the full day</span></div>
-    <div class="ideas">
-      <div class="idea rv">
-        <div class="ph"><img data-img="Pantheon Rom 1 cropped.jpg" alt="Pantheon"></div>
-        <div class="bd"><div class="who">10-min walk · free-ish</div><h4>The Pantheon</h4><p>1,900 years old and still the largest unreinforced concrete dome ever built. The roof has a 30-ft open hole — when it rains, it rains inside, and hidden floor drains carry it away. Rome's best 30 minutes.</p></div>
+    <div class="guide rv">
+      <div class="guide-head"><h3>Field Guide · Rome</h3><div class="axis">famous ⟶ off the path</div></div>
+
+      <div class="shelf">
+        <div class="shelf-tag">☀ Daylight <span class="swipe">swipe →</span></div>
+        <div class="row">
+          <article class="gc"><div class="ph"><img data-img="Pantheon Rom 1 cropped.jpg" alt="Pantheon"></div><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i class="on"></i><span>The classic</span></div><h4>The Pantheon</h4><p>1,900 years old, still the largest unreinforced concrete dome ever built — with a 30-ft open hole in the roof. When it rains, it rains inside.</p><div class="mt">10 min walk · go at opening</div></div></article>
+          <article class="gc"><div class="ph"><img data-img="Trevi Fountain, Rome, Italy 2 - May 2007.jpg" alt="Trevi Fountain"></div><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i class="on"></i><span>The classic</span></div><h4>Trevi Fountain</h4><p>Coin over the <em>left</em> shoulder with the right hand = you'll return to Rome. It collects thousands of euros a day, all given to charity. Zoey throws first.</p><div class="mt">7 AM or 10 PM · beat crowds</div></div></article>
+          <article class="gc"><div class="ph"><img data-img="Colosseo 2020.jpg" alt="Colosseum"></div><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i class="on"></i><span>The classic</span></div><h4>The Colosseum</h4><p>50,000 seats emptied in minutes through 80 numbered gates — stadium design we still copy. Skip-the-line slot early, or admire the outside; both are legit with a 3-year-old.</p><div class="mt">Book ahead · morning</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Crowd fave</span></div><h4>Piazza Navona</h4><p>Bernini's Fountain of the Four Rivers, street painters, and room to run — built on an ancient racetrack, which is why it's shaped like one.</p><div class="mt">5 min walk · Zoey's square</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>At your door</span></div><h4>Campo de' Fiori market</h4><p>Rome's old open-air market, two blocks from the apartment — fruit, flowers, spice pyramids, and your breakfast strategy sorted.</p><div class="mt">Mornings · till ~2 PM</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Shade + oars</span></div><h4>Villa Borghese rowboats</h4><p>Rome's central park: rent a rowboat on the little lake by the fake Greek temple, find playgrounds under the pines, escape the afternoon heat.</p><div class="mt">Uphill from Piazza del Popolo</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i></i><i></i><span>Deep cut</span></div><h4>Torre Argentina cat sanctuary</h4><p>The ruins where Julius Caesar was assassinated are now run by cats — dozens of them sunbathing on 2,000-year-old marble. Zoey and Ethan, united at last.</p><div class="mt">6 min walk · free to peer in</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i></i><i></i><span>Deep cut</span></div><h4>The Gianicolo noon cannon</h4><p>Every day at 12:00 sharp, a howitzer fires a blank over the city from Gianicolo hill — a tradition since 1904, with all of Rome spread out below.</p><div class="mt">Above Trastevere · 11:50 arrival</div></div></article>
+        </div>
       </div>
-      <div class="idea rv">
-        <div class="ph"><img data-img="Trevi Fountain, Rome, Italy 2 - May 2007.jpg" alt="Trevi Fountain"></div>
-        <div class="bd"><div class="who">Go at 7 AM or 10 PM</div><h4>Trevi Fountain</h4><p>Coin over the <em>left</em> shoulder with the right hand = you'll return to Rome. The fountain collects ~€3,000 a day, all donated to charity. Zoey gets the first throw.</p></div>
+
+      <div class="shelf">
+        <div class="shelf-tag">☾ After dark <span class="swipe">swipe →</span></div>
+        <div class="row">
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i class="on"></i><span>The classic</span></div><h4>Trevi after 10 PM</h4><p>Floodlit marble, half the crowd, all the drama. The single best argument for keeping Zoey up past bedtime once.</p><div class="mt">15 min walk · night two?</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i class="on"></i><span>The classic</span></div><h4>Trastevere evenings</h4><p>Cross your own bridge — Ponte Sisto is the end of your street — into lantern-lit lanes of trattorias and piazza life. Rome's best dinner neighborhood.</p><div class="mt">Over the bridge · every night</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Right below you</span></div><h4>Lungo il Tevere nights</h4><p>All summer the Tiber banks under Ponte Sisto become a night promenade — stalls, bars, food stands, ping-pong tables along the water. Literally downstairs.</p><div class="mt">Riverbank · June–Sept</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Crowd fave</span></div><h4>The gelato crawl</h4><p>Frigidarium (5 min away) → Giolitti, serving since 1900 → Della Palma's absurd 150-flavor wall. Democratic voting encouraged.</p><div class="mt">All walkable · nightly ritual</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i></i><i></i><span>The splurge</span></div><h4>Terrazza Borromini</h4><p>Rooftop aperitivo floating directly above Piazza Navona's domes — book a sunset slot and watch the square light up beneath you.</p><div class="mt">Reserve · smart casual</div></div></article>
+        </div>
       </div>
-      <div class="idea rv">
-        <div class="ph"><img data-img="Colosseo 2020.jpg" alt="Colosseum"></div>
-        <div class="bd"><div class="who">If the crew has legs</div><h4>The Colosseum</h4><p>50,000 seats, emptied in minutes through 80 numbered gates — stadium design we still copy. Book a skip-the-line slot for early morning or accept it from the outside; both are legit with a 3-year-old.</p></div>
-      </div>
-      <div class="idea rv">
-        <div class="bd"><div class="who">Right outside the door</div><h4>Campo de' Fiori morning market</h4><p>Two blocks away: Rome's oldest open market for fruit, flowers, and people-watching. Grab breakfast here, and Frigidarium — one of Rome's best gelaterie — is a 5-minute walk for the after-dinner cone.</p></div>
+
+      <div class="shelf">
+        <div class="shelf-tag">✕ The table <span class="swipe">swipe →</span></div>
+        <div class="row">
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i class="on"></i><span>The classic</span></div><h4>Roscioli</h4><p>The carbonara canon, one corner from your Airbnb — half deli, half restaurant, fully legendary. If any table gets booked in advance, it's this one.</p><div class="mt">Via dei Giubbonari · reserve</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i class="on"></i><span>Crowd fave</span></div><h4>Osteria da Fortunata</h4><p>Nonnas hand-rolling pasta in the window on Campo de' Fiori — Zoey will press her face to the glass. Touristy, cheerful, genuinely good fettuccine.</p><div class="mt">2 blocks · expect a line</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>On your block</span></div><h4>Emma</h4><p>Roman pizza done thin and crackling, made with Roscioli-family flour — a proper sit-down pizzeria a few doors from home base.</p><div class="mt">Via Monte della Farina</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>Local move</span></div><h4>Da Enzo al 29</h4><p>Trastevere's cult trattoria — tiny room, cacio e pepe, amatriciana, tiramisù in a jar. No-reservation queue; arrive before 7 or embrace the wait.</p><div class="mt">Across the river · early</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i class="on"></i><i></i><span>By the dome</span></div><h4>Armando al Pantheon</h4><p>A family kitchen in the Pantheon's shadow since 1961 — Roman classics done straight, beloved by locals and chefs alike.</p><div class="mt">Book well ahead</div></div></article>
+          <article class="gc"><div class="bd"><div class="fame"><i class="on"></i><i></i><i></i><span>Ethan fuel</span></div><h4>Trapizzino</h4><p>Rome's own street-food invention: a crisp pizza-dough pocket stuffed with slow braises — meatballs, chicken cacciatora — eaten walking.</p><div class="mt">Trastevere · handheld</div></div></article>
+        </div>
       </div>
     </div>
   </div>
