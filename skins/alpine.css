@@ -140,3 +140,16 @@ footer .sig{margin-top:44px;font-size:10px;font-weight:800;letter-spacing:.26em;
 .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.scrollcue::after,#livebadge .pulse{animation:none}}
 @media(max-width:640px){.ev{grid-template-columns:70px 1fr;gap:10px}.region-hero{min-height:52svh;margin:0 10px}}
+
+/* walkable from base */
+.walk{margin:48px 0 6px;border:1.5px solid var(--ink);background:var(--card);overflow:hidden}
+.walk-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 16px;padding:14px 18px;border-bottom:1.5px solid var(--ink);background:var(--ink)}
+.wh-k{font-size:10.5px;font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:var(--paper)}
+.wh-a{font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);transition:color .8s ease}
+.walk-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));}
+.wk{display:flex;gap:12px;align-items:flex-start;padding:13px 18px;text-decoration:none;color:inherit;border-bottom:1px solid var(--paper-2);transition:background .2s ease}
+.wk:hover{background:var(--paper)}
+.wt{font-size:11px;font-weight:800;color:var(--acc);border:1px solid var(--ink);padding:3px 8px;min-width:44px;text-align:center;font-variant-numeric:tabular-nums;background:var(--card)}
+.wk b{font-size:14px;font-weight:800;display:block;color:var(--ink);text-transform:uppercase;letter-spacing:-.01em}
+.wk b::after{content:" ↗";color:var(--acc);font-size:.8em;font-weight:700}
+.wk div>span{font-size:12.5px;color:var(--ink-soft);line-height:1.45;display:block;margin-top:2px}
