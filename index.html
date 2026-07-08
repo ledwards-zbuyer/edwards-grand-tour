@@ -470,7 +470,7 @@
   </div>
 </section>
 
-<footer>
+<footer id="home" data-accent="#7FB8DC">
   <div class="kicker rv" style="color:var(--accent)">Jul 22 · SGF 7:18 PM</div>
   <h2 class="rv">Home with<br>the stories.</h2>
   <p class="lede rv">Fifteen days. A bullet train, a paraglider, a chocolate fountain, a canyon, a marble rooftop, a bronze Christ under the sea, and the oldest dome on Earth. Barbara saw Europe. Zoey swam in three countries. Ethan has content for a year.</p>
@@ -503,12 +503,14 @@ document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 // ---------- region accent shifting + rail ----------
 const railLinks = [...document.querySelectorAll('#rail a')];
 const sections = [...document.querySelectorAll('[data-accent]')];
+document.documentElement.setAttribute('data-region','hero');
 const sio = new IntersectionObserver(es=>{
   es.forEach(e=>{
     if(e.isIntersecting){
       const s = e.target;
       document.documentElement.style.setProperty('--accent', s.dataset.accent);
       const id = s.id === 'top' ? 'hero' : s.id;
+      document.documentElement.setAttribute('data-region', id);
       railLinks.forEach(a=>a.classList.toggle('on', a.dataset.s === id));
     }
   });
