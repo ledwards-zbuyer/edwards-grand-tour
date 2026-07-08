@@ -140,3 +140,16 @@ footer .sig{margin-top:44px;font-family:'JetBrains Mono',monospace;font-size:10p
 .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.scrollcue::after,#livebadge .pulse,.hero::after{animation:none}}
 @media(max-width:640px){.ev{grid-template-columns:70px 1fr;gap:10px}.region-hero{min-height:52svh}.hero::after{font-size:54px}}
+
+/* walkable from base */
+.walk{margin:48px 0 6px;border:1.5px solid var(--card-edge);background:var(--card);overflow:hidden}
+.walk-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 16px;padding:15px 18px;border-bottom:1.5px solid var(--card-edge)}
+.wh-k{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--volt)}
+.wh-a{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.walk-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));}
+.wk{display:flex;gap:12px;align-items:flex-start;padding:13px 18px;text-decoration:none;color:inherit;border-bottom:1px dashed var(--card-edge);transition:background .2s ease}
+.wk:hover{background:#1A1A1F}
+.wt{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#0C0C0E;background:var(--volt);padding:3px 8px;min-width:44px;text-align:center;transform:rotate(-1deg)}
+.wk b{font-size:14px;font-weight:700;display:block;color:var(--ink);text-transform:uppercase}
+.wk b::after{content:" ↗";color:var(--volt);font-size:.8em}
+.wk div>span{font-size:12.5px;color:var(--ink-soft);line-height:1.45;display:block;margin-top:2px}
