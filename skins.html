@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A121C">
+<title>Skin Lab · The Edwards Grand Tour</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=Bodoni+Moda:ital,wght@1,700&family=Fraunces:opsz,wght@9..144,900&family=Archivo:wght@600;800;900&family=Anton&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{background:#0A121C;color-scheme:dark}
+body{font-family:'Space Grotesk',system-ui,sans-serif;background:#0A121C;color:#F2ECE0;min-height:100svh;padding:56px min(6vw,70px) 80px}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#8f9aa6;margin-bottom:16px}
+h1{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(30px,5.6vw,62px);text-transform:uppercase;line-height:1}
+h1 span{color:#7FB8DC}
+.sub{margin-top:16px;color:#9aa5b1;max-width:640px;font-size:15px}
+.sub b{color:#F2ECE0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:44px}
+a.skin{display:flex;flex-direction:column;text-decoration:none;border-radius:16px;overflow:hidden;border:1px solid rgba(242,236,224,.12);transition:transform .3s ease,border-color .3s ease}
+a.skin:hover{transform:translateY(-5px);border-color:#7FB8DC}
+.prev{height:150px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.prev .t{font-size:clamp(26px,3vw,34px);line-height:1}
+.body{padding:16px 18px 18px;background:#0E1926;display:flex;flex-direction:column;gap:9px;flex:1}
+.name{font-weight:700;font-size:16px;color:#F2ECE0;display:flex;align-items:center;justify-content:space-between}
+.name .tag{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:#7FB8DC;border:1px solid rgba(127,184,220,.4);border-radius:999px;padding:3px 8px}
+.desc{font-size:12.5px;color:#9aa5b1;flex:1;line-height:1.5}
+.dots{display:flex;gap:6px}
+.dots i{width:16px;height:16px;border-radius:50%;border:1px solid rgba(0,0,0,.25)}
+.cta{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#7FB8DC;margin-top:4px}
+/* previews */
+.p-midnight{background:radial-gradient(70% 80% at 80% 10%,rgba(127,184,220,.22),transparent 60%),#07101A}
+.p-midnight .t{font-family:'Unbounded',sans-serif;font-weight:900;color:#F2ECE0;text-transform:uppercase}
+.p-midnight .t b{color:#7FB8DC}
+.p-riviera{background:#F4EFE3;box-shadow:inset 0 0 0 8px #F4EFE3, inset 0 0 0 9px #1F2C3A}
+.p-riviera .t{font-family:'Bodoni Moda',serif;font-style:italic;color:#1F2C3A}
+.p-riviera::after{content:"";position:absolute;left:14px;right:14px;bottom:14px;height:9px;background:repeating-linear-gradient(90deg,#2E6E8E 0 22px,transparent 22px 44px)}
+.p-spritz{background:radial-gradient(60% 70% at 80% 0%,rgba(232,130,60,.35),transparent 60%),#FFF2DF}
+.p-spritz .t{font-family:'Fraunces',serif;font-weight:900;color:#472A1E;text-transform:uppercase}
+.p-spritz .t b{color:#C05A2C}
+.p-alpine{background:linear-gradient(#ECECE6 1px,transparent 1px),linear-gradient(90deg,#ECECE6 1px,transparent 1px),#F7F7F3;background-size:28px 28px}
+.p-alpine .t{font-family:'Archivo',sans-serif;font-weight:900;color:#101214;text-transform:uppercase;letter-spacing:-.03em}
+.p-alpine .t b{color:#2C6E8E}
+.p-volt{background:#0C0C0E}
+.p-volt .t{font-family:'Anton',sans-serif;color:#EFEEE6;text-transform:uppercase}
+.p-volt .t b{color:#C9FF3D}
+.p-volt::after{content:"↯↯↯↯↯↯↯↯";position:absolute;bottom:6px;left:0;right:0;text-align:center;color:#232328;font-size:22px;letter-spacing:8px}
+footer{margin-top:60px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#5d6873}
+</style>
+</head>
+<body>
+<div class="eyebrow">The Edwards Grand Tour · Skin Lab</div>
+<h1>One trip.<br><span>Five looks.</span></h1>
+<p class="sub">Same itinerary, same field guides, same live day tracker — five design skins. Tap any to view the full site in that style; the <b>⇄ Skins</b> button in the corner brings you back here. Content edits apply to all five automatically.</p>
+
+<div class="grid">
+  <a class="skin" href="index.html?skin=midnight">
+    <div class="prev p-midnight"><div class="t">MID<b>NIGHT</b></div></div>
+    <div class="body">
+      <div class="name">Midnight <span class="tag">Current default</span></div>
+      <div class="dots"><i style="background:#07101A"></i><i style="background:#F2ECE0"></i><i style="background:#7FB8DC"></i><i style="background:#3FBFA8"></i><i style="background:#E7A24B"></i></div>
+      <div class="desc">The original: deep midnight sea, glowing region accents that shift as you scroll, techno display type. Moody and cinematic.</div>
+      <div class="cta">View site →</div>
+    </div>
+  </a>
+
+  <a class="skin" href="index.html?skin=riviera">
+    <div class="prev p-riviera"><div class="t">Riviera</div></div>
+    <div class="body">
+      <div class="name">Riviera Poster</div>
+      <div class="dots"><i style="background:#F4EFE3"></i><i style="background:#1F2C3A"></i><i style="background:#2E6E8E"></i><i style="background:#0E7D72"></i><i style="background:#C0563B"></i></div>
+      <div class="desc">Mid-century European travel poster: ecru paper, Mediterranean navy, Bodoni italics, framed photo prints, ticket-stub days, awning stripes.</div>
+      <div class="cta">View site →</div>
+    </div>
+  </a>
+
+  <a class="skin" href="index.html?skin=spritz">
+    <div class="prev p-spritz"><div class="t">SPR<b>ITZ</b></div></div>
+    <div class="body">
+      <div class="name">Spritz</div>
+      <div class="dots"><i style="background:#FFF2DF"></i><i style="background:#472A1E"></i><i style="background:#C05A2C"></i><i style="background:#E8A23C"></i><i style="background:#FFF9EF"></i></div>
+      <div class="desc">Italian aperitivo hour: warm sunset cream, espresso-brown ink, chunky rounded labels with offset shadows, playful and appetizing.</div>
+      <div class="cta">View site →</div>
+    </div>
+  </a>
+
+  <a class="skin" href="index.html?skin=alpine">
+    <div class="prev p-alpine"><div class="t">ALP<b>INE</b></div></div>
+    <div class="body">
+      <div class="name">Alpine</div>
+      <div class="dots"><i style="background:#F7F7F3"></i><i style="background:#101214"></i><i style="background:#2C6E8E"></i><i style="background:#FFFFFF"></i><i style="background:#5A5F63"></i></div>
+      <div class="desc">Swiss grid discipline: stark white, hard black rules, zero border-radius, tabular numerals. Timetable-precise — very Zürich Hauptbahnhof.</div>
+      <div class="cta">View site →</div>
+    </div>
+  </a>
+
+  <a class="skin" href="index.html?skin=volt">
+    <div class="prev p-volt"><div class="t">VO<b>LT</b></div></div>
+    <div class="body">
+      <div class="name">Volt <span class="tag">Ethan bait</span></div>
+      <div class="dots"><i style="background:#0C0C0E"></i><i style="background:#EFEEE6"></i><i style="background:#C9FF3D"></i><i style="background:#141417"></i><i style="background:#5FD3DE"></i></div>
+      <div class="desc">Zine energy: charcoal black, acid volt green, towering condensed type, diamond markers, tilted stickers, a scrolling ticker under the hero.</div>
+      <div class="cta">View site →</div>
+    </div>
+  </a>
+</div>
+
+<footer>SGF → FRA → ZRH → LAAX → MIL → PARAGGI → ROMA → SGF · MMXXVI</footer>
+</body>
+</html>
